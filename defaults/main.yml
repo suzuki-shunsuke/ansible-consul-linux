@@ -1,2 +1,3 @@
 ---
 # defaults file for consul-linux
+consul_version: 0.7.0

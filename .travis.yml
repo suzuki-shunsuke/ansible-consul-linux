@@ -5,17 +5,20 @@ python: "2.7"
 sudo: required
 dist: trusty
 
-before_install: cd tests
+addons:
+  apt:
+    sources:
+    - sourceline: ppa:ansible/ansible
+    packages:
+    - ansible
+    - zip
 
-install:
-- sudo apt-get update
-- sudo add-apt-repository -y ppa:ansible/ansible
-- sudo apt-get update
-- sudo apt-get install -y ansible
+before_script:
 - ansible --version
+- cd tests
 
 script:
-- ansible-playbook -i inventory test.yml --connection=local --sudo
+- ansible-playbook test.yml
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

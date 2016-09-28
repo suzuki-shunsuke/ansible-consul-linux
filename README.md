@@ -10,12 +10,13 @@ https://galaxy.ansible.com/suzuki-shunsuke/consul-linux/
 Requirements
 ------------
 
-Nothing.
+* unzip
 
 Role Variables
 --------------
 
 * consul_nonroot: Whether the remote_user is root or not. This variable is set automatically, and is used to execute tasks with the become option.
+* consul_version: The Consul version. The default value is 0.7.0.
 
 Dependencies
 ------------
