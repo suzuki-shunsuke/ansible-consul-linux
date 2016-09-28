@@ -15,7 +15,7 @@ install:
 - ansible --version
 
 script:
-- ansible-playbook -i inventory test.yml
+- ansible-playbook test.yml
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
