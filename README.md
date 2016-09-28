@@ -1,7 +1,11 @@
 consul-linux
 ==============
 
+[![Build Status](https://travis-ci.org/suzuki-shunsuke/ansible-consul-linux.svg?branch=master)](https://travis-ci.org/suzuki-shunsuke/ansible-consul-linux)
+
 Install consul on Linux.
+
+https://galaxy.ansible.com/suzuki-shunsuke/consul-linux/
 
 Requirements
 ------------
