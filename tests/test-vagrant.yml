@@ -1,0 +1,8 @@
+---
+- hosts: default
+  roles:
+    - role: ansible-consul-linux
+  tasks:
+  - command: consul version
+    register: result
+  - debug: var=result
