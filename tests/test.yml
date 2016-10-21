@@ -1,9 +1,16 @@
 ---
-- hosts: localhost
-  connection: local
+- hosts: default
+  pre_tasks:
+  - name: Install unzip
+    apt:
+      name: zip
+    become: yes
   roles:
   - role: ansible-consul-linux
+    consul_version: 0.6.0
   tasks:
   - command: consul version
     register: result
-  - debug: var=result
+    changed_when: false
+  - debug:
+      var: result
