@@ -3,28 +3,28 @@
 - name: Remove files.
   file:
     state: absent
-    path: "/tmp/{{ item }}"
+    path: "/tmp/{{item}}"
   with_items:
-  - "consul_{{ consul_version }}_linux_amd64.zip"
+  - "consul_{{consul_version}}_linux_amd64.zip"
   - consul
 - name: Download the package.
   get_url:
-    url: "https://releases.hashicorp.com/consul/{{ consul_version }}/consul_{{ consul_version }}_linux_amd64.zip"
+    url: "https://releases.hashicorp.com/consul/{{consul_version}}/consul_{{consul_version}}_linux_amd64.zip"
     dest: /tmp
     mode: 0777
 - name: Unzip the package.
-  command: "unzip /tmp/consul_{{ consul_version }}_linux_amd64.zip -d /tmp"
+  command: "unzip /tmp/consul_{{consul_version}}_linux_amd64.zip -d /tmp"
 - name: Install consul
   copy:
     src: /tmp/consul
     dest: /usr/bin
     remote_src: yes
     mode: 0755
-  become: "{{ consul_nonroot }}"
+  become: "{{consul_nonroot}}"
 - name: Remove files.
   file:
     state: absent
-    path: "/tmp/{{ item }}"
+    path: "/tmp/{{item}}"
   with_items:
-  - "consul_{{ consul_version }}_linux_amd64.zip"
+  - "consul_{{consul_version}}_linux_amd64.zip"
   - consul
