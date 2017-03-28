@@ -7,6 +7,11 @@ Install consul on Linux.
 
 https://galaxy.ansible.com/suzuki-shunsuke/consul-linux/
 
+This role is deprecated
+------------------------
+
+Please use [suzuki-shunsuke.hashicorp-binary](https://galaxy.ansible.com/suzuki-shunsuke/hashicorp-binary/).
+
 Requirements
 ------------
 
